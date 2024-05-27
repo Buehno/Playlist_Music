@@ -73,5 +73,5 @@ def  autenticar():
 @app.route('/sair')
 def sair():
         session['usuario_logado'] = None
-        return redirect('/login')
+        return redirect('/logi')
 app.run(debug=True)
