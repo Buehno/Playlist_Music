@@ -27,7 +27,7 @@ app = Flask(__name__)
 app.secret_key = 'primeiroprojetoflask'
 
 @app.route("/")
-def listarMusicas():
+def listarMusicas(.):
 
         if session['usuario_logado'] == None or 'usuario_logado' not in session:
                 return redirect(url_for('logar'))
