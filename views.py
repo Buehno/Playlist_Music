@@ -40,8 +40,10 @@ def adicionar_muscia():
 
 @app.route("/editar")
 def editar():
-      if 'usuario_logado' not in session or session[]
-      return  render_template("editar_musica.html", titulo = "Editar Musica")
+        if 'usuario_logado' not in session or session['usuari_logado'] == None:
+                 return redirect(url_for('logar'))
+        
+        return  render_template("editar_musica.html", titulo = "Editar Musica")
 
 
 @app.route("/atualizar")
