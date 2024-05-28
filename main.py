@@ -29,14 +29,14 @@ app.secret_key = 'primeiroprojetoflask'
 @app.route("/")
 def listarMusicas():
 
-        if session['usuario_logado'] == None or 'usuario_logado' not in session:
+        if  'usuario_logado' not in session or  session['usuario_logado'] == None:
                 return redirect(url_for('logar'))
         return render_template("index.html", titulo = "Lista de musicas" , 
                                musicas = lista)
 
 @app.route("/cadastrar")
 def cadastrar_musica():
-        if session['usuario_logado'] == None or 'usuario_logado' not in session:
+        if 'usuario_logado' not in session or session['usuario_logado'] == None:
                 return redirect(url_for('logar'))
         
         return render_template('cadastra_musica.html',
