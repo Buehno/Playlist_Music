@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='bootstrap.css')}}"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="list-unstyled" id="messages">
+      {% for message in messages %}
+      <li class="alert alert-danger">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <form action="/autenticar" method="post">
+      <div class="container">
+        <fieldset>
+          <legend>Entre com suas informações</legend>
+          <div class="mb-3">
+            <label for="">login</label>
+            <input type="text" class="form-control" name="txtLogin" />
+          </div>
+          <div class="mb-3">
+            <label for="">senha</label>
+            <input type="password" class="form-control" name="txtSenha" />
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Logar</button>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+  </body>
+</html>
