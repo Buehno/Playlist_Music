@@ -10,6 +10,7 @@ create table Musica(
 
 select * from Musica;
 
+delete from Musica where id_musica =  9;
 insert into Musica(nome_musica,  cantor_banda, genero_musica)
 values('O sol' , 'Vitor Clay' , 'Pop');
 insert into Musica(nome_musica,  cantor_banda, genero_musica)
